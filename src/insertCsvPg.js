@@ -14,7 +14,7 @@ const pool = new Pool({
 // Function to insert data into the database
 async function insertData(row) {
 
-    const query = `INSERT INTO oct_dec (report_date, category, item, qty, price_point_name, modifiers_applied, location, dining_option, count, channel) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
+    const query = `INSERT INTO report_day (report_date, category, item, qty, price_point_name, modifiers_applied, location, dining_option, count, channel) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
 
     try {
         await pool.query(query, [`${row['Date']}`, `${row['Category']}`, `${row['Item']}`, `${row['Qty']}`, `${row['Price Point Name']}`, `${row['Modifiers Applied']}`, `${row['Location']}`, `${row['Dining Option']}`, `${row['Count']}`, `${row['Channel']}`]);
@@ -24,7 +24,10 @@ async function insertData(row) {
 }
 
 // Read and process the CSV file
-const filePath = 'src/database/1-3 months/oct-dec-items-2024-10-01-2025-01-01.csv';
+const filePath = 'src/database/1-3 months/jan-mar-items-2024-01-01-2024-04-01.csv';
+// const filePath = 'src/database/1-3 months/apr-jun-items-2024-04-01-2024-07-01.csv';
+// const filePath = 'src/database/1-3 months/jul-sep-items-2024-07-01-2024-10-01.csv';
+// const filePath = 'src/database/1-3 months/oct-dec-items-2024-10-01-2025-01-01.csv';
 
 (async () => {
     const insertPromises = [];

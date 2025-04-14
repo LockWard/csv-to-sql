@@ -4,13 +4,13 @@
   "main": "index.js",
   "scripts": {
     "dev:pg": "node src/insertCsv.js",
-    "start:pg": "node --max-old-space-size=8192 src/insertCsv.js",
+    "start:pg": "node --max-old-space-size=8192 src/insertCsvPg.js",
     "dev:mysql": "node src/inserCsvMysql.js",
     "start:mysql": "node --max-old-space-size=8192 src/inserCsvMysql.js",
     "dev:parse": "node src/parseCsv.js",
     "dev:remove": "node src/removeColumnCsv.js",
     "dev:rbql": "node src/rbqlCsv.js",
-    "dev:add": "node src/add.js",
+    "dev:add": "node src/addQuaote.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
